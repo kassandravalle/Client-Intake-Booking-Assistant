@@ -1,115 +1,104 @@
-# Client Intake & Booking Assistant
+# Service Business Intake Automation
 
-## Tagline
-AI-powered workflow that converts online inquiries into structured booking leads and organized intake workflows.
+### AI system that captures inbound inquiries and converts them into structured client intake workflows.
 
 ---
 
 ## Overview
 
-Service businesses receive inquiries across many channels — contact forms, Yelp messages, email, and social platforms. Most of these arrive as unstructured messages that are difficult to track and prioritize.
+Service businesses receive inquiries from many places — website forms, Yelp messages, Google reviews, and email. These inquiries often arrive as unstructured messages that are difficult to track and respond to quickly.
 
-This system captures client inquiries, analyzes them with AI, and converts them into structured booking leads that can be organized and managed through a centralized intake workflow.
+This system automates the intake process by capturing incoming inquiries, analyzing them with AI, organizing them into a structured database, and notifying the team with actionable summaries.
 
----
-
-## Purpose
-
-The goal of this system is to automate the client intake process so service businesses can:
-
-- Capture inquiries automatically
-- Extract structured booking details from messages
-- Organize leads into a centralized database
-- Respond faster to potential clients
+The result is a simple operational workflow that ensures no inquiry is missed and responses happen faster.
 
 ---
 
-## Primary Users
+## Problem
 
-- Service business owners
-- Operations teams managing inbound leads
-- Booking coordinators or customer support teams
+Client inquiries often arrive across multiple channels and formats:
 
----
-
-## Business Outcomes
-
-- Faster response times to client inquiries
-- Structured lead records instead of scattered messages
-- Automated lead classification and prioritization
-- Organized intake pipeline for booking workflows
-
----
-
-## System Architecture
-
-The workflow converts unstructured customer inquiries into structured lead records through a series of automated steps.
-
-### Inquiry Sources
-
-Client inquiries can originate from:
-
-- Yelp messages
 - Website contact forms
+- Yelp or Google messages
 - Email inquiries
-- Online messaging platforms
+- Social messages
 
-### Automation Workflow
+Without a centralized intake system, teams end up:
 
-1. **Webhook Capture**
+- missing inquiries
+- responding slowly
+- manually copying messages into CRM systems
+- losing potential bookings
 
-   Incoming inquiries are received through a webhook trigger.
-
-2. **AI Intake Analysis**
-
-   An LLM analyzes the inquiry to extract:
-
-   - service requested
-   - urgency or timeline
-   - booking intent
-   - lead priority
-
-3. **Structured Lead Creation**
-
-   Extracted information is written into a structured lead database.
-
-4. **Team Notification**
-
-   The system sends a Slack notification alerting the team of a new inquiry.
+Service businesses need a simple way to **capture, organize, and respond to inquiries in one place.**
 
 ---
 
-## Technical Stack
+## Solution
 
-- Make (automation orchestration)
-- OpenAI (LLM intake analysis)
-- Airtable (lead database)
-- Slack (team notifications)
-- Webhooks (event triggers)
+This project demonstrates an automated intake workflow that:
+
+1. Captures inbound inquiries via webhook triggers
+2. Uses AI to analyze the message and extract key details
+3. Stores the inquiry in a structured Airtable database
+4. Sends a Slack alert summarizing the inquiry
+5. Enables quick response and booking follow-up
+
+---
+
+## Operational Impact
+
+- Centralized intake pipeline for client inquiries
+- Faster response times for potential customers
+- Structured records instead of scattered messages
+- Automated notifications for new leads
+- Reduced manual intake work
+
+---
+
+## Tech Stack Used
+
+Make • OpenAI • Airtable • Slack • Webhooks
+
+---
+
+## How the System Works
+
+**Step 1 — Inquiry Capture**
+
+Client inquiries arrive through channels like website forms or external platforms. These messages trigger a webhook that starts the automation workflow.
+
+**Step 2 — AI Intake Analysis**
+
+An LLM analyzes the inquiry and extracts useful context such as the requested service, urgency, and a short summary.
+
+**Step 3 — Structured Lead Record**
+
+The processed data is written into an Airtable database that serves as the intake CRM.
+
+**Step 4 — Team Notification**
+
+The system sends a Slack alert summarizing the inquiry so the team can respond quickly or send a booking link.
 
 ---
 
 ## Repository Structure
 
-client-intake-booking-assistant
-│
-├── README.md
+Service-Business-Intake-Automation
 │
 ├── architecture
 │ └── system-overview.md
 │
-├── workflows
-│ └── make-scenario.json
+├── data-model
+│ └── airtable-schema.md
+│
+├── docs
+│ └── workflow-overview.md
 │
 ├── prompts
 │ └── intake-analysis-prompt.md
 │
-├── data-model
-│ └── airtable-schema.md
-│
-└── docs
-├── workflow-overview.md
-└── testing-scenarios.md
+└── README.md
 
 ---
 
@@ -117,7 +106,8 @@ client-intake-booking-assistant
 
 Potential extensions of this system include:
 
-- Automated booking scheduling
-- Calendar integrations
-- Lead scoring models
-- CRM integrations
+- Google Business Profile inquiry ingestion
+- Yelp message integration
+- Automated response generation
+- Calendar booking integrations
+- Lead qualification scoring
